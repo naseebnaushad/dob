@@ -13,7 +13,8 @@ Teams that ship the same service to multiple countries/regions often end up with
 3. Run **Dob: Build from Profile** from the Command Palette, or press `Cmd+Alt+B` / `Ctrl+Alt+B`.
 4. Pick a profile from the list.
 5. Fill in any prompted fields (e.g. version tag) — leave blank to use the profile's default.
-6. The extension runs the resulting `docker build` command in an integrated terminal named **Docker Builder**, so you see full build output live.
+6. If Docker isn't running, the extension launches Docker Desktop for you and waits for it to come up (up to 90s) before continuing — on Linux, where Docker usually runs as a system service, it just tells you to start it.
+7. The extension runs the resulting `docker build` command in an integrated terminal named **Docker Builder**, so you see full build output live.
 
 ## Profile schema
 
