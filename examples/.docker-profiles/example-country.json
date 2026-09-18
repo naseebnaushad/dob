@@ -1,0 +1,13 @@
+{
+  "name": "Example Country",
+  "dockerfilePath": "dockerfiles/example-country/Dockerfile",
+  "context": ".",
+  "imageName": "example/my-service",
+  "platform": "linux/amd64",
+  "buildArgs": {
+    "TZ": "UTC"
+  },
+  "promptFields": [
+    { "key": "tag", "label": "Version tag", "default": "latest" }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "dob-the-docker-builder",
+  "displayName": "Dob: the Docker Builder",
+  "description": "Build docker images from saved per-environment profiles (Dockerfile path, image name, tag, build args) without leaving VS Code.",
+  "version": "0.1.0",
+  "publisher": "your-publisher-name",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "docker",
+    "build",
+    "profiles",
+    "dockerfile"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dockerBuilder.buildFromProfile",
+        "title": "Dob: Build from Profile"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "dockerBuilder.buildFromProfile",
+        "key": "ctrl+alt+b",
+        "mac": "cmd+alt+b"
+      }
+    ],
+    "configuration": {
+      "title": "Dob: the Docker Builder",
+      "properties": {
+        "dockerBuilder.profilesPath": {
+          "type": "string",
+          "default": ".docker-profiles",
+          "description": "Folder (relative to the workspace root) containing the *.json build profiles."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "npm run compile",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0",
+    "@vscode/vsce": "^2.24.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-github-username/dob-the-docker-builder"
+  }
+}
