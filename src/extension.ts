@@ -1,6 +1,7 @@
 import * as vscode from "vscode";
 import { loadProfiles, Profile } from "./profiles";
 import { runBuild } from "./buildRunner";
+import { ensureDockerRunning } from "./docker";
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand("dockerBuilder.buildFromProfile", async () => {
@@ -42,6 +43,10 @@ export function activate(context: vscode.ExtensionContext) {
 
     const fieldValues = await promptForFields(picked.profile);
     if (fieldValues === undefined) {
+      return;
+    }
+
+    if (!(await ensureDockerRunning())) {
       return;
     }
 
