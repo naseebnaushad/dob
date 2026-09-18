@@ -3,7 +3,7 @@
   "displayName": "Dob: the Docker Builder",
   "description": "Build docker images from saved per-environment profiles (Dockerfile path, image name, tag, build args) without leaving VS Code.",
   "version": "0.1.0",
-  "publisher": "your-publisher-name",
+  "publisher": "naseebnaushad",
   "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"
@@ -58,6 +58,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-github-username/dob-the-docker-builder"
+    "url": "https://github.com/naseebnaushad/dob"
   }
 }
